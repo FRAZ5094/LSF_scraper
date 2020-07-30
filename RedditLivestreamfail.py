@@ -22,7 +22,7 @@ def Open_URLS_in_tabs(URLS,FirstTab):
 FileExists=os.path.exists(LogFileName)
 if FileExists:
     LogFile=np.genfromtxt(LogFileName,dtype='str')
-    if len(LogFile)>100:
+    if len(LogFile)>200:
         LogFile=LogFile[:50]
 
 
