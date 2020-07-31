@@ -22,8 +22,8 @@ def Open_URLS_in_tabs(URLS,FirstTab):
 FileExists=os.path.exists(LogFileName)
 if FileExists:
     LogFile=np.genfromtxt(LogFileName,dtype='str')
-    if len(LogFile)>200:
-        LogFile=LogFile[:50]
+    if len(LogFile)>1000:
+        LogFile=LogFile[:500]
 
 
 URL="https://old.reddit.com/r/LivestreamFail/"
