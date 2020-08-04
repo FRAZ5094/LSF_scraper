@@ -6,18 +6,24 @@ import time
 import numpy as np 
 import os
 from datetime import date
+import pyfiglet
 LogFileName=r"Today-Log.txt"
 
-def Open_URLS_in_tabs(URLS,FirstTab):
+
+banner = pyfiglet.figlet_format("LSF scraper",font="slant")
+print(banner)
+
+
+def Open_URLS_in_tabs(URLS):
     global driver
     driver=webdriver.Chrome(r"chromedriver.exe")    
-    if FirstTab=="no":
-        driver.get(URLS[0])
-        URLS.pop(0)
     driver.maximize_window()
     if len(URLS)>=1:
+        driver.get("https://old.reddit.com/r/LivestreamFail/")
         for URL in URLS:
             driver.execute_script('''window.open("{}","_blank");'''.format(URL))
+    else:
+        print("no urls")
 
 FileExists=os.path.exists(LogFileName)
 if FileExists:
@@ -79,7 +85,7 @@ else:
 if n=="y" and len(ClipURLS)>=1:
     ClipURLS.reverse()
     start=time.perf_counter()
-    Open_URLS_in_tabs(ClipURLS,"yes")
+    Open_URLS_in_tabs(ClipURLS)
     end=time.perf_counter()
     print("{} Clips loaded in {} seconds".format(len(ClipURLS),round(end-start,2)))
     if FileExists:
