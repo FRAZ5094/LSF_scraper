@@ -1,0 +1,5 @@
+selenium==3.141.0
+beautifulsoup4==4.8.2
+requests==2.22.0
+numpy==1.18.1
+pyfiglet==0.8.post1

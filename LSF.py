@@ -1,14 +1,13 @@
 from selenium import webdriver
 import requests
 from bs4 import BeautifulSoup
-import smtplib
 import time
 import numpy as np 
 import os
 from datetime import date
 import pyfiglet
-LogFileName=r"Today-Log.txt"
 
+LogFileName=r"Today-Log.txt"
 
 banner = pyfiglet.figlet_format("LSF scraper",font="slant")
 print(banner)
